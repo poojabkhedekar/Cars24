@@ -38,4 +38,16 @@ export class CarService {
     const url = 'http://localhost:3000/redemCouponCode';
     return this.httpClient.post(url, body);
   }
+  postWish(body: any) {
+    const url = 'http://localhost:3000/addToWishList';
+    return this.httpClient.post(url, body);
+  }
+  getWish() {
+    const url = 'http://localhost:3000/getAllWishList';
+    return this.httpClient.get(url);
+  }
+  deletewish(id: any) {
+    const url = 'http://localhost:3000/deleteWishList/' + id;
+    return this.httpClient.delete(url, id);
+  }
 }

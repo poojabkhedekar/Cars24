@@ -26,6 +26,7 @@ import { RedeemComponent } from './redeem/redeem.component';
 import { DatePipe } from '@angular/common';
 import { SortComponent } from './sort/sort.component';
 import { MatRadioModule } from '@angular/material/radio';
+import { DashboardTwoComponent } from './dashboard-two/dashboard-two.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { MatRadioModule } from '@angular/material/radio';
     ShowAllCouponComponent,
     RedeemComponent,
     SortComponent,
+    DashboardTwoComponent,
   ],
   imports: [
     BrowserModule,

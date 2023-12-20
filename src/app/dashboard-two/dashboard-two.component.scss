@@ -1,0 +1,50 @@
+.firstmat {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  padding: 10px;
+}
+.btn {
+  width: 180px;
+  color: blue;
+}
+.resetbtn {
+  width: 180px;
+  margin-left: 30px;
+  color: blue;
+}
+.sortbtn {
+  width: 180px;
+  margin-left: 200px;
+  color: blue;
+}
+.input {
+  height: 62px;
+  width: 250px;
+  margin-left: 150px;
+}
+.carmatcard {
+  display: grid;
+  grid-template-columns: repeat((4, 1fr)); //4 matcard in 1 row
+  gap: 20px;
+}
+.divcar {
+  display: flex;
+  flex-direction: column;
+  width: min-content;
+  width: fit-content;
+  margin: 10px;
+}
+.addTOWishList {
+  color: red;
+}
+.removeWishList {
+  color: grey;
+}
+.boooked {
+  filter: blur(1px);
+  //   background-color: brown !important;
+}
+.notBooked {
+  background-color: white !important;
+}

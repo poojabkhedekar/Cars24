@@ -1,0 +1,53 @@
+<p>coupon works!</p>
+<div *ngIf="!couponsdata">
+  <form [formGroup]="couponForm">
+    <mat-card style="text-align: center">
+      <mat-label>Enter the Coupon Code:</mat-label>
+      <mat-form-field class="input">
+        <input matInput formControlName="couponCode" type="text" />
+      </mat-form-field>
+      <mat-label>Enter the Discount in %:</mat-label>
+      <mat-form-field class="input">
+        <input matInput formControlName="discount" type="number" />
+      </mat-form-field>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="createCoupon()"
+        class="btn"
+      >
+        Submit
+      </button>
+    </mat-card>
+  </form>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="getCouponCode()"
+    class="btnshowall"
+  >
+    Show all Coupons
+  </button>
+</div>
+
+<!-- showallcoupons -->
+<mat-card *ngIf="couponsdata">
+  <button mat-raised-button (click)="back()" color="primary" class="btn">
+    Back
+  </button>
+  <table style="text-align: center">
+    <tr>
+      <th>Coupon Code</th>
+      <th>Discount</th>
+      <th>Delete</th>
+    </tr>
+    <tr *ngFor="let item of allCoupons">
+      <!-- <td>{{ item._id }}</td> -->
+      <td>{{ item.couponCode }}</td>
+      <td>{{ item.couponPercentage }}%</td>
+      <td>
+        <button mat-raised-button (click)="delete(item._id)">Delete</button>
+      </td>
+    </tr>
+  </table>
+</mat-card>

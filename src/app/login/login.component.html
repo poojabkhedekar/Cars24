@@ -1,0 +1,17 @@
+<p>login works!</p>
+<form [formGroup]="loginForm">
+  <mat-card style="text-align: center">
+    <h1 style="color: blue">Login Form</h1>
+    <mat-label>Enter theUserName</mat-label>
+    <mat-form-field class="mainmat">
+      <input matInput type="text" formControlName="username" />
+    </mat-form-field>
+    <mat-label>Enter the Password</mat-label>
+    <mat-form-field class="mainmat">
+      <input matInput type="password" formControlName="password" />
+    </mat-form-field>
+  </mat-card>
+  <button mat-raised-button color="primary" (click)="login()" class="btn">
+    Login
+  </button>
+</form>

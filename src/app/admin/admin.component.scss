@@ -1,0 +1,41 @@
+.innermatcard {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+}
+.innerdiv {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  width: 33%;
+}
+.seconddiv {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  width: 33%;
+}
+.thirddiv {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  width: 32%;
+}
+.btn {
+  width: 300px;
+  margin-left: 500px;
+}
+mat-label {
+  color: blue;
+}
+.createcouponsmat {
+  display: flex;
+  flex-direction: row;
+}
+.btncoupon {
+  width: 200px;
+  margin-left: 800px;
+}

@@ -1,0 +1,26 @@
+<p>redeem works!</p>
+<form [formGroup]="redeemForm">
+  <mat-card class="text-align:center">
+    <mat-label>Enter the Coupon Code:</mat-label>
+    <mat-form-field class="abc">
+      <input matInput formControlName="couponCode" type="text" />
+    </mat-form-field>
+    <mat-label>show Discount</mat-label>
+    <mat-form-field class="abc">
+      <input
+        matInput
+        formControlName="discount"
+        type="number"
+        readonly="true"
+      />
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="redeemsubmit()"
+      class="btn"
+    >
+      Submit
+    </button>
+  </mat-card>
+</form>

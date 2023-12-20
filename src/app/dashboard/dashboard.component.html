@@ -1,0 +1,92 @@
+<p>dashboard works!</p>
+<div>
+  <mat-card class="firstmat">
+    <button mat-raised-button class="btn" (click)="filterDialog()">
+      <mat-icon>filter_list</mat-icon>Filterdata
+    </button>
+    <button mat-raised-button class="resetbtn" color="warn" (click)="reset()">
+      Reset
+    </button>
+    <mat-form-field class="input">
+      <input matInput [(ngModel)]="search" placeholder="search the car" />
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="searchcar()">
+      search
+    </button>
+    <button mat-raised-button class="sortbtn" (click)="(sort)">
+      <mat-icon>filter_list</mat-icon>SortData
+    </button>
+  </mat-card>
+  <h2>Total Available cars:{{ dataCars.length }}</h2>
+  <div class="carmatcard">
+    <mat-card
+      *ngFor="let item of dataCars"
+      [ngClass]="item.bookCar ? 'boooked' : 'notBooked'"
+    >
+      <div class="divcar">
+        <img
+          src="../../assets/images/{{ item.brand }}.jpeg"
+          height="180px"
+          width="280px"
+          style="border: 1px solid blue"
+        />
+
+        <br />
+        <p style="font-size: 18px; margin-left: 20px">
+          <b> {{ item.makeYear }}&nbsp;&nbsp;{{ item.brand }}</b>
+          &nbsp;&nbsp;<u>{{ item.model }}</u> &nbsp;&nbsp;<i
+            class="fa fa-heart"
+            aria-hidden="true"
+            [ngClass]="item.wishList ? 'addTOWishList' : 'removeWishList'"
+            (click)="addWishList(item)"
+            style="font-size: larger"
+          ></i>
+        </p>
+        <p style="font-size: 15px">
+          <b
+            >{{ item.state }} &nbsp;&nbsp;&nbsp;&nbsp;{{
+              item.stateCode
+            }}&nbsp;&nbsp;&nbsp;&nbsp;{{ item.city }}&nbsp;&nbsp;&nbsp;&nbsp;{{
+              item.color
+            }}</b
+          >
+        </p>
+        <p>
+          <u>{{ item.features }}</u>
+        </p>
+        <p>
+          <b>{{ item.variant }}</b
+          >&nbsp;&nbsp; <b>{{ item.seats }}</b
+          >&nbsp;&nbsp; <b>{{ item.transmission }}</b
+          >&nbsp;&nbsp;
+          <b>{{ item.bodyType }}</b>
+        </p>
+        <p style="font-size: 15px">
+          <b style="text-decoration: line-through">₹{{ item.price }} </b
+          ><b style="margin-left: 60px">{{ item.kmDriven }}</b>
+        </p>
+        <p style="font-size: 10px">
+          <b>{{ item.discountPrice }}</b>
+        </p>
+        <p>
+          &nbsp;&nbsp;<button
+            mat-raised-button
+            [ngClass]="item.bookCar ? 'boooked' : 'notBooked'"
+            (click)="bookCar(item)"
+            style="color: blue"
+          >
+            Book Car
+          </button>
+          &nbsp;&nbsp;
+          <button
+            mat-raised-button
+            (click)="addToCart(item)"
+            style="color: blue"
+          >
+            Add To Cart
+          </button>
+        </p>
+      </div>
+    </mat-card>
+  </div>
+</div>
